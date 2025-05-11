@@ -24,14 +24,13 @@ GEN_OFFSET_FOR_LONG_GEN = 2048 # How many additional tokens for "long generation
 QUERY_LEN_DECODE = 1
 
 
+# This is wrong 
 PYTHIA_SC_SG_PARAMS = {**PYTHIA_CORE_PARAMS, "M": SC_CTX_LEN, "P": QUERY_LEN_DECODE}
 PYTHIA_SC_LG_PARAMS = {**PYTHIA_CORE_PARAMS, "M": SC_CTX_LEN + GEN_OFFSET_FOR_LONG_GEN, "P": QUERY_LEN_DECODE}
 PYTHIA_LC_SG_PARAMS = {**PYTHIA_CORE_PARAMS, "M": LC_CTX_LEN, "P": QUERY_LEN_DECODE}
 PYTHIA_LC_LG_PARAMS = {**PYTHIA_CORE_PARAMS, "M": LC_CTX_LEN + GEN_OFFSET_FOR_LONG_GEN, "P": QUERY_LEN_DECODE}
 
-WORST_CASE_FUSEMAX_PARAMS = {
-    "B": 64, "D": 1024, "E": 128, "F": 128, "H": 8, "M": 64, "P": 64, "S": 4096
-}
+
 
 
 class Cascade:
@@ -53,8 +52,7 @@ class Cascade:
         elif model == "Pythia_LC_LG":
             print(f"Cascade __init__: Directly instantiating Transformer for {model}")
             self.transformer = Transformer(**PYTHIA_LC_LG_PARAMS)
-        elif model == "WorstCaseFuseMax" and seq_len_str == "64":
-            print(f"Cascade __init__: Directly instantiating Transformer for {model}")
+
             self.transformer = Transformer(**WORST_CASE_FUSEMAX_PARAMS)
         else: 
             self.transformer = Transformer.from_csv("cloud", model, seq_len)
