@@ -9,8 +9,8 @@ Original paper repository: [micro24-fusemax-artifact](https://github.com/FPSG-UI
 This project examines how FuseMax performance varies when scaling model parameters and input context lengths.
 
 ## Installation 
-
-Follow the original [README](./FUSEMAXREADME.md) to set up the docker image.
+I have updated the docker config to support both ARM & X86 
+Then follow the original [README](./FUSEMAXREADME.md) to set up the docker image.
 
 ## Results
 ![roofline1](workspace/notebooks/roofline_plots/roofline_plot_1_bert_baselines.jpeg)
