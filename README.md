@@ -23,8 +23,8 @@ Then follow the original [README](./FUSEMAXREADME.md) to set up the docker image
 # Reproducing results
 1. BERT on fusemax with different level of optimization is saved in this [notebook](workspace/notebooks/figs.ipynb). (1k, and 4k length)
 2. Pythia-14m on fusemax with different level of optimization is saved in this [notebook](workspace/notebooks/pythia.ipynb)
-3. All theoretical roofline is saved in this [notebook](workspace/notebooks/theoretical roofline.ipynb)
-4. Operational intensity vs context length is saved in this [notebook](workspace/notebooks/workload progress.ipynb)
+3. All theoretical roofline is saved in this [notebook](workspace/notebooks/theoreticalroofline.ipynb)
+4. Operational intensity vs context length is saved in this [notebook](workspace/notebooks/workloadprogress.ipynb)
 
 
 
